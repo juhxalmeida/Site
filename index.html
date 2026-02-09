@@ -3,75 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <title>Tabela com Imagem</title>
+
+  <!-- =======================
+       ESTILOS GERAIS
+       ======================= -->
   <style>
-    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: linear-gradient(135deg, #e3f2fd, #f8fbff); }
-    table { width: 100%; border-collapse: collapse; background: #ffffff; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); border-radius: 12px; overflow: hidden; }
-    .quadrado { width: 100px; height: 300px; background: linear-gradient(180deg, #4087f0, #5aa0ff); padding: 0; }
-    .quadrado img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
-    .retangulo { width: 250px; height: 250px; background: #e7f1ff; border-left: 1px solid #cfe2ff; }
-    .retangulo video { width: 100%; height: 100%; object-fit: cover; border-radius: 0 0 12px 0; }
-    td { text-align: center; vertical-align: top; padding: 15px; }
-    td.links { width: 120px; background: #f1f7ff; border-right: 1px solid #cfe2ff; }
-    td.links a { display: block; margin: 10px auto; padding: 12px; width: 90%; background: linear-gradient(135deg, #0d6efd, #3b82f6); color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3); cursor: pointer; }
-    td.links a:hover { background: linear-gradient(135deg, #084298, #2563eb); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(13, 110, 253, 0.45); }
-    
-    /* Ajuste do container do formulário */
-    #area-conteudo { min-height: 600px; }
-    #formulario-google { display: none; }
-    #conteudoFrame { width: 100%; height: 600px; border: none; border-radius: 12px; background: #f8f9fa; }
+    /* Reset básico + fonte e fundo */
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f8fbff);
+    }
+
+    /* Estrutura principal da tabela */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* =======================
+       ÁREA DO LOGO
+       ======================= */
+    .quadrado {
+      width: 100px;
+      height: 300px;
+      background: linear-gradient(180deg, #4087f0, #5aa0ff);
+      padding: 0;
+    }
+
+    .quadrado img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+    }
+
+    /* =======================
+       ÁREA DO VÍDEO
+       ======================= */
+    .retangulo {
+      width: 250px;
+      height: 250px;
+      background: #e7f1ff;
+      border-left: 1px solid #cfe2ff;
+    }
+
+    .retangulo video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 0 12px 0;
+    }
+
+    /* =======================
+       CONFIGURAÇÕES DAS CÉLULAS
+       ======================= */
+    td {
+      text-align: center;
+      vertical-align: top;
+      padding: 15px;
+    }
+
+    /* =======================
+       MENU LATERAL (LINKS)
+       ======================= */
+    td.links {
+      width: 120px;
+      background: #f1f7ff;
+      border-right: 1px solid #cfe2ff;
+    }
+
+    td.links a {
+      display: block;
+      margin: 10px auto;
+      padding: 12px;
+      width: 90%;
+      background: linear-gradient(135deg, #0d6efd, #3b82f6);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+      cursor: pointer;
+    }
+
+    td.links a:hover {
+      background: linear-gradient(135deg, #084298, #2563eb);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(13, 110, 253, 0.45);
+    }
+
+    /* =======================
+       ÁREA DE CONTEÚDO DINÂMICO
+       ======================= */
+    #area-conteudo {
+      min-height: 600px;
+    }
+
+    /* Formulário começa oculto */
+    #formulario-google {
+      display: none;
+    }
+
+    /* Iframe usado para carregar páginas */
+    #conteudoFrame {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      background: #f8f9fa;
+    }
   </style>
 
+  <!-- =======================
+       SCRIPTS DE CONTROLE
+       ======================= -->
   <script>
+    /* Mostra o formulário e esconde o iframe */
     function mostrarFormulario() {
       document.getElementById("formulario-google").style.display = "block";
       document.getElementById("conteudoFrame").style.display = "none";
     }
+
+    /* Mostra o iframe e esconde o formulário */
     function mostrarIframe() {
       document.getElementById("formulario-google").style.display = "none";
       document.getElementById("conteudoFrame").style.display = "block";
     }
   </script>
 </head>
+
 <body>
 
-<table>
-  <tr>
-    <td class="quadrado">
-      <img src="https://github.com/juhxalmeida/Logo-da-tabela/blob/main/Logo%20da%20tabela.png?raw=true">
-    </td>
-    <td class="retangulo">
-      <video autoplay muted loop playsinline controls>
-        <source src="02.mp4 (2).mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-    </td>
-  </tr>
-  <tr>
-    <td class="links">
-      <a href="https://daniel3g.github.io/bosque-maia/#details" target="conteudo" onclick="mostrarIframe()">Detalhes</a>
-      <a href="https://daniel3g.github.io/bosque-maia/#resources" target="conteudo" onclick="mostrarIframe()">Recursos</a>
-      <a href="https://daniel3g.github.io/bosque-maia/#screenshot" target="conteudo" onclick="mostrarIframe()">Telas</a>
-      <a href="https://daniel3g.github.io/bosque-maia/#download" target="conteudo" onclick="mostrarIframe()">Download</a>
-      <a href="javascript:void(0);" onclick="mostrarFormulario()">Fale Conosco</a>
-    </td>
-    <td id="area-conteudo">
-      <iframe id="conteudoFrame" name="conteudo"></iframe>
-      
-      <!-- FORMULÁRIO OFICIAL EMBUTIDO - FUNCIONA 100% -->
-      <div id="formulario-google">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeDZT0EigJuSIvDlL4IK3wUnfW2EnFLS67C37TdQL7ZbfMPbA/viewform?embedded=true" 
-          width="100%" 
-          height="600" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0">
-          Carregando…
-        </iframe>
-      </div>
-    </td>
-  </tr>
-</table>
+  <table>
+    <!-- =======================
+         LINHA SUPERIOR (LOGO + VÍDEO)
+         ======================= -->
+    <tr>
+      <td class="quadrado">
+        <img src="https://github.com/juhxalmeida/Logo-da-tabela/blob/main/Logo%20da%20tabela.png?raw=true" alt="Logo">
+      </td>
+
+      <td class="retangulo">
+        <video autoplay muted loop playsinline controls>
+          <source src="02.mp4 (2).mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </td>
+    </tr>
+
+    <!-- =======================
+         LINHA INFERIOR (MENU + CONTEÚDO)
+         ======================= -->
+    <tr>
+      <!-- MENU LATERAL -->
+      <td class="links">
+        <a href="https://daniel3g.github.io/bosque-maia/#details" target="conteudo" onclick="mostrarIframe()">Detalhes</a>
+        <a href="https://daniel3g.github.io/bosque-maia/#resources" target="conteudo" onclick="mostrarIframe()">Recursos</a>
+        <a href="https://daniel3g.github.io/bosque-maia/#screenshot" target="conteudo" onclick="mostrarIframe()">Telas</a>
+        <a href="https://daniel3g.github.io/bosque-maia/#download" target="conteudo" onclick="mostrarIframe()">Download</a>
+
+        <!-- Botão que troca iframe por formulário -->
+        <a href="javascript:void(0);" onclick="mostrarFormulario()">Fale Conosco</a>
+      </td>
+
+      <!-- CONTEÚDO DINÂMICO -->
+      <td id="area-conteudo">
+        <!-- Iframe para páginas externas -->
+        <iframe id="conteudoFrame" name="conteudo"></iframe>
+
+        <!-- FORMULÁRIO GOOGLE EMBUTIDO -->
+        <div id="formulario-google">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeDZT0EigJuSIvDlL4IK3wUnfW2EnFLS67C37TdQL7ZbfMPbA/viewform?embedded=true"
+            width="100%"
+            height="600"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            Carregando…
+          </iframe>
+        </div>
+      </td>
+    </tr>
+  </table>
 
 </body>
 </html>
